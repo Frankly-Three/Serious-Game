@@ -49,6 +49,7 @@
      <Compile Include="Assets\Game Scripts\Environment\CutOff.cs" />
      <Compile Include="Assets\Game Scripts\Environment\FallOff.cs" />
      <Compile Include="Assets\Game Scripts\Environment\SpawnPoint.cs" />
+     <Compile Include="Assets\Game Scripts\Petrinets\Button.cs" />
      <Compile Include="Assets\Game Scripts\Petrinets\Place.cs" />
      <Compile Include="Assets\Game Scripts\Petrinets\Transition.cs" />
      <Compile Include="Assets\Game prefabs\SetModel.cs" />
