@@ -2,3 +2,4 @@ Library/
 *.unityproj
 *.csproj
 *.userprefs
+Temp/UnityLockfile
