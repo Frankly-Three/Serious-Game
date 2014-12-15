@@ -7,17 +7,19 @@ public class Transition : MonoBehaviour {
 	public List<Place> inPlace = new List<Place>();
 	public List<Place> outPlace = new List<Place>();
 
-	private GameObject button;
-	private GameObject transition;
+	private GameObject player;
 
 	void Awake(){
-		button = gameObject.GetComponentsInChildren<Transform>()[0].gameObject;
+		player = GameObject.FindGameObjectWithTag("Player");
+
+		Rigidbody cube = gameObject.GetComponent<SpringJoint>().connectedBody;
+		Physics.IgnoreCollision(cube.collider, gameObject.collider);
 	}
 
-	void OnTriggerEnter(Collider other) {
-//		if(!other.gameObject.Equals(button)){
-//			gameObject.
-//		}
+	void OnCollisionEnter(Collision collision) {
+		if (collision.collider.Equals(player.collider)) {
+			execute();
+		}
 	}
 
 	public void execute(){
