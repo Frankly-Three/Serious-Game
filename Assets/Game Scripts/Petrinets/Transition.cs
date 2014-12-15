@@ -7,17 +7,17 @@ public class Transition : MonoBehaviour {
 	public List<Place> inPlace = new List<Place>();
 	public List<Place> outPlace = new List<Place>();
 
-	private GameObject player;
+	private GameObject button;
 	private GameObject transition;
 
 	void Awake(){
-		player = GameObject.FindGameObjectWithTag ("Player");
+		button = gameObject.GetComponentsInChildren<Transform>()[0].gameObject;
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if(other.gameObject.Equals(player)){
-			execute();
-		}
+//		if(!other.gameObject.Equals(button)){
+//			gameObject.
+//		}
 	}
 
 	public void execute(){
