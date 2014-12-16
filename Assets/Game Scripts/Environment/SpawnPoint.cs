@@ -3,14 +3,14 @@ using System.Collections;
 
 public class SpawnPoint : MonoBehaviour {
 	
-	public GameObject player;
+	private GameObject player;
 
 	void Awake () {
 		player = GameObject.FindGameObjectWithTag ("Player");
-		spawnPlayer ();
+		spawnPlayer();
 	}
 
-	void spawnPlayer () {
+	public void spawnPlayer () {
 		player.transform.position = transform.position;
 		this.enabled = false;
 	}
