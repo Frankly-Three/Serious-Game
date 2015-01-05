@@ -57,7 +57,7 @@
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Game prefabs\Petrinets\3DTextShader.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>D:/Git/Serious-Game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Frank/Dropbox/UnityProjects/Serious-Game/Serious-Game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
