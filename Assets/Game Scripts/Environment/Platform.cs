@@ -13,8 +13,10 @@ public class Platform : MonoBehaviour {
 		place.RegisterPlatform(this);
 	}
 
-	public void Move(){
+	public void Move(bool playSound){
 		transform.position = origin + place.tokens * direction;
-		audio.PlayOneShot(moveSound);
+		if (playSound) {
+			audio.PlayOneShot(moveSound);
+		}
 	}
 }

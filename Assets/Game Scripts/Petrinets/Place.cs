@@ -18,13 +18,13 @@ public class Place : MonoBehaviour {
 		//label.transform.position.z = transform.position.z - 2;
 		//label.color = Color.black;
 		//label.fontSize = 32;
-		UpdateLabel();
+		UpdateLabel(false);
 	}
 
-	public void UpdateLabel () {
+	public void UpdateLabel(bool playSound) {
 		label.GetComponent<TextMesh>().text = tokens.ToString();
 		if(listener!=null){
-			listener.Move();
+			listener.Move(playSound);
 		}
 	}
 
