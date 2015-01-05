@@ -5,8 +5,10 @@ public class SoundScript : MonoBehaviour {
 	public float raycastMargin = 0.1f;
 
 	public AudioClip jumpSound;
+	public AudioClip touchDownSound;
 
 	private GameObject player;
+	private bool isPlayerJumping;
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +21,16 @@ public class SoundScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (isPlayerJumping && IsPlayerGrounded()) {
+			audio.PlayOneShot(touchDownSound);
+			isPlayerJumping = false;
+		}
 		if (Input.GetKey(KeyCode.Space) && IsPlayerGrounded()) {
 			audio.PlayOneShot(jumpSound);
+			isPlayerJumping = true;
+		}
+		if (!IsPlayerGrounded()) {
+			isPlayerJumping = true;
 		}
 	}
 
