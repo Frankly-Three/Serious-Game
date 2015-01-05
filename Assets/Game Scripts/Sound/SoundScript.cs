@@ -28,11 +28,11 @@ public class SoundScript : MonoBehaviour {
 	void Update () {
 		//jumping and touchdown sounds
 		if (isPlayerJumping && IsPlayerGrounded()) {
-			audio.PlayOneShot(touchDownSound);
+			player.audio.PlayOneShot(touchDownSound);
 			isPlayerJumping = false;
 		}
 		if (Input.GetKey(KeyCode.Space) && IsPlayerGrounded()) {
-			audio.PlayOneShot(jumpSound);
+			player.audio.PlayOneShot(jumpSound);
 			isPlayerJumping = true;
 		}
 		if (!IsPlayerGrounded()) {
@@ -42,14 +42,14 @@ public class SoundScript : MonoBehaviour {
 		//walk sounds
 		Vector3 deltaVelocity = (player.transform.position - lastPlayerPosition) / Time.deltaTime;;
 		if (Mathf.Abs(deltaVelocity.x) >= walkingVelocityMargin && IsPlayerGrounded()) {
-			if (audio.clip == null || !audio.clip.Equals(walkSound)) {
-				audio.clip = walkSound;
-				audio.loop = true;
-				audio.Play();
+			if (player.audio.clip == null || !audio.clip.Equals(walkSound)) {
+				player.audio.clip = walkSound;
+				player.audio.loop = true;
+				player.audio.Play();
 			}
 		} else {
-			audio.clip = null;
-			audio.loop = false;
+			player.audio.clip = null;
+			player.audio.loop = false;
 		}
 		lastPlayerPosition = player.transform.position;
 	}
