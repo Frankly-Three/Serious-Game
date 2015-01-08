@@ -46,8 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Game Scripts\Environment\CameraTurn.cs" />
      <Compile Include="Assets\Game Scripts\Environment\CutOff.cs" />
      <Compile Include="Assets\Game Scripts\Environment\FallOff.cs" />
+     <Compile Include="Assets\Game Scripts\Environment\Planet_Turning.cs" />
      <Compile Include="Assets\Game Scripts\Environment\Platform.cs" />
      <Compile Include="Assets\Game Scripts\Environment\SpawnPoint.cs" />
      <Compile Include="Assets\Game Scripts\Petrinets\Place.cs" />

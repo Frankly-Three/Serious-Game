@@ -6,6 +6,7 @@ public class Platform : MonoBehaviour {
 	public Place place;
 	public Vector3 direction;
 	private Vector3 origin;
+	public int magnitude;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +15,6 @@ public class Platform : MonoBehaviour {
 	}
 
 	public void Move(){
-		transform.position = origin + place.tokens * direction;
+		transform.position = origin + place.tokens * direction * magnitude;
 	}
 }
