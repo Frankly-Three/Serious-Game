@@ -38,10 +38,8 @@ public class Transition : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collider other) {
-		if(other.gameObject.Equals(player)){
-			Execute();
-		}
+	void OnMouseDown() {
+		Execute();
 	}
 
 	private void Execute(){

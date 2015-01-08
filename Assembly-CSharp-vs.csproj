@@ -52,11 +52,15 @@
      <Compile Include="Assets\Game Scripts\Environment\SpawnPoint.cs" />
      <Compile Include="Assets\Game Scripts\Petrinets\Place.cs" />
      <Compile Include="Assets\Game Scripts\Petrinets\Transition.cs" />
-     <Compile Include="Assets\Game prefabs\SetModel.cs" />
+     <Compile Include="Assets\MoveMotionPack\SampleScene\Scripts\PlayManager.cs" />
      <Compile Include="Assets\UIManagerScript.cs" />
+     <None Include="Assets\MoveMotionPack\SampleScene\Shaders\ReflectiveDiffuseSpecTransp.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\MoveMotionPack\SampleScene\Shaders\DiffuseReflectiveShader.shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\MoveMotionPack\SampleScene\Shaders\ReflectiveDiffuseSpec.shader" />
      <None Include="Assets\Game prefabs\Petrinets\3DTextShader.shader" />
+     <None Include="Assets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>D:/Git/Serious-Game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>

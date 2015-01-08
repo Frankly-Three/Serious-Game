@@ -582,6 +582,14 @@ function SetVelocity (velocity : Vector3) {
 	SendMessage("OnExternalVelocity");
 }
 
+function GetVelocity(): Vector3{
+	return movement.velocity;
+}
+
+function GetGrounded(): boolean{
+	return grounded;
+}
+
 // Require a character controller to be attached to the same game object
 @script RequireComponent (CharacterController)
 @script AddComponentMenu ("Character/Character Motor")
