@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class SoundScript : MonoBehaviour {
-	public float raycastMargin = 0.1f;
 	public float walkingVelocityMargin = 0.05f;
 
 	public AudioClip jumpSound;
@@ -55,6 +54,6 @@ public class SoundScript : MonoBehaviour {
 	}
 
 	private bool IsPlayerGrounded() {
-		return Physics.Raycast(player.transform.position, -Vector3.up, player.collider.bounds.extents.y + raycastMargin);
+		return ((CharacterMotor)player.GetComponent("CharacterMotor")).grounded;
 	}
 }
