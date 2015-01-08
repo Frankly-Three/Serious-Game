@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Transition : MonoBehaviour {
+
+	public AudioClip transitionSuccessSound;
+	public AudioClip transitionFailedSound;
 	
 	public List<Place> inPlace = new List<Place>();
 	public Dictionary<Place, GameObject> pointers = new Dictionary<Place, GameObject>();
@@ -38,13 +41,11 @@ public class Transition : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collider other) {
-		if(other.gameObject.Equals(player)){
-			Execute();
-		}
+	void OnMouseDown() {
+		Execute();
 	}
 
-	private void Execute(){
+	void Execute(){
 		bool canExectute = true;
 		//Check
 		foreach (Place place in inPlace) {
@@ -56,14 +57,16 @@ public class Transition : MonoBehaviour {
 			}
 		}
 		if(!canExectute){
+			audio.PlayOneShot(transitionFailedSound);
 			Invoke("reset", 0.3f);
 			return;
 		}
 		//Check passed
+		audio.PlayOneShot(transitionSuccessSound);
 		//In
 		foreach (Place place in inPlace) {
 			place.tokens--;
-			place.UpdateLabel();
+			place.UpdateLabel(true);
 
 			pointers[place].particleSystem.startColor = Color.blue;
 			pointers[place].particleSystem.emissionRate = 10;
@@ -71,7 +74,7 @@ public class Transition : MonoBehaviour {
 		//Out
 		foreach (Place place in outPlace) {
 			place.tokens++;
-			place.UpdateLabel();
+			place.UpdateLabel(true);
 
 			pointers[place].particleSystem.startColor = Color.blue;
 			pointers[place].particleSystem.emissionRate = 10;
