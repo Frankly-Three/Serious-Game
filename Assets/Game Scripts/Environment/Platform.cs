@@ -12,6 +12,7 @@ public class Platform : MonoBehaviour {
 	void Start () {
 		origin = transform.position;
 		place.RegisterPlatform(this);
+		transform.position = origin + place.tokens * direction * magnitude;
 	}
 
 	public void Move(){
