@@ -26,17 +26,6 @@ public class Place : MonoBehaviour {
 		if(listener!=null){
 			listener.Move(playSound);
 		}
-		if (tokens > 0) {
-			Texture texture = Resources.Load ("place_occupied") as Texture;
-			if (texture) {
-				renderer.material.mainTexture = texture;
-			}
-		} else {
-			Texture texture = Resources.Load ("place_empty") as Texture;
-			if (texture) {
-				renderer.material.mainTexture = texture;
-			}
-		}
 	}
 
 	public void RegisterPlatform(Platform obj){
