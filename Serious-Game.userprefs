@@ -1,20 +1,23 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Game Scripts\Environment\Platform.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\Frank\Dropbox\UnityProjects\Serious-Game\Serious-Game\Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs">
     <Files>
-      <File FileName="Assets\Game Scripts\Environment\Platform.cs" Line="24" Column="1" />
+      <File FileName="Assets\Game Scripts\Environment\Platform.cs" Line="1" Column="1" />
       <File FileName="Assets\GUIScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" Line="1" Column="1" />
       <File FileName="Assets\Game prefabs\Petrinets\3DTextShader.shader" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" Line="1" Column="1" />
       <File FileName="Assets\Game Scripts\Petrinets\Transition.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game Scripts\Petrinets\Place.cs" Line="42" Column="22" />
+      <File FileName="Assets\Game Scripts\Petrinets\Place.cs" Line="1" Column="1" />
       <File FileName="Assets\Game Scripts\Environment\SpawnPoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game Scripts\Environment\Planet_Turning.cs" Line="1" Column="1" />
+      <File FileName="Assets\Game Scripts\Environment\Planet_Turning.cs" Line="13" Column="17" />
       <File FileName="Assets\FollowMouseInWorldScript.cs" Line="1" Column="1" />
       <File FileName="Assets\SmoothCamera.cs" Line="1" Column="1" />
-      <File FileName="Assets\Spawn.cs" Line="93" Column="2" />
-      <File FileName="Assets\Game Scripts\Sound\SoundScript.cs" Line="52" Column="4" />
+      <File FileName="Assets\Spawn.cs" Line="1" Column="1" />
+      <File FileName="Assets\Game Scripts\Sound\SoundScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Game Scripts\Environment\CutOff.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\Frank\Dropbox\UnityProjects\Serious-Game\Serious-Game\Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" Line="1" Column="7" />
+      <File FileName="Assets\Game Scripts\Environment\FallOff.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
