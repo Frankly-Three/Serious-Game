@@ -27,7 +27,7 @@ public class OrientModel : MonoBehaviour {
 		//TODO: Fix only when idling
 		model.transform.position = new Vector3(
 			player.transform.position.x,
-			player.transform.position.y - 0.875f - 0.15f,
+			player.transform.position.y - 1.025f,
 			player.transform.position.z
 		);
 	}
