@@ -8,6 +8,8 @@ public class Spawn : MonoBehaviour {
 	private GameObject spot;
 	private int size;
 	private int index;
+	private int offset;
+	private int lastRespawnIndex;
 	private float interval = 1.0f;
     private float timeLeft = -0.1f;
 	
@@ -22,6 +24,8 @@ public class Spawn : MonoBehaviour {
 		);
 		size = spawns.Count;
 		index = -1;
+		offset = 0;
+		lastRespawnIndex = 0;
 	}
 	
 	void Update () {
@@ -30,12 +34,25 @@ public class Spawn : MonoBehaviour {
 		}else{
 			GameObject spawn = (GameObject)(spawns[index + 1]);
 			if(transform.position.x > spawn.transform.position.x){
+				//reached checkpoint
 				spawn.GetComponent<ParticleSystem>().startColor =  new Color(1.0f, 0.5f, 0.05f);
 				timeLeft = interval;
 				index++;
+				offset = 0;
 			}
-			if(transform.position.y < -10.0f){
-				Respawn();
+			GameObject resetSpawn = (GameObject)(spawns[lastRespawnIndex + 1]);
+			if(transform.position.x > resetSpawn.transform.position.x){
+				//reached checkpoint again
+				offset = 0;
+			}
+			if(transform.position.y < -10.0f || Input.GetKey(KeyCode.R)) {
+				//reset
+				//TODO: reset petrinets
+				if (index + offset < 0) {
+					offset = -index;
+				}
+				Respawn(index + offset);	
+				offset--;
 			}
 		}
 		if(timeLeft < 0.0f){
@@ -52,7 +69,8 @@ public class Spawn : MonoBehaviour {
 		}
 	}
 	
-	private void Respawn(){
-		transform.position = spawns[index].transform.position;
+	private void Respawn(int i){
+		transform.position = spawns[i].transform.position;
+		lastRespawnIndex = i;
 	}
 }
