@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Spawn : MonoBehaviour {
-
+	public AudioClip respawnSound;
+	public AudioClip suicideSound;
 	public List<GameObject> spawns = new List<GameObject>();
 	private GameObject spot;
 	private int size;
@@ -61,6 +62,7 @@ public class Spawn : MonoBehaviour {
 					offset = -index;
 				}
 				if (transform.position.y < -10.0f) {
+					audio.PlayOneShot(suicideSound);
 					offset = 0;
 				}
 				Respawn(index + offset);
@@ -84,6 +86,7 @@ public class Spawn : MonoBehaviour {
 	}
 	
 	private void Respawn(int i){
+		audio.PlayOneShot(respawnSound);
 		transform.position = spawns[i].transform.position;
 		lastRespawnIndex = i;
 	}
