@@ -16,7 +16,7 @@ public class GUIScript : MonoBehaviour {
 		GUI.Box(new Rect(widthOffset, heightOffset, width, height), "");
 
 		GUI.skin = h1skin;
-		GUI.Label(rectFromMiddle(325, 550, heightOffset + 100, 50), "Serious Game");
+		GUI.Label(rectFromMiddle(325, 550, heightOffset + 100, 75), "Geeks in Space");
 
 		GUI.skin = h2skin;
 		GUI.Button(rectFromMiddle(400, heightOffset + 200, 50), "Play");
@@ -27,7 +27,7 @@ public class GUIScript : MonoBehaviour {
 		GUI.skin = h3skin_active;
 		GUI.enabled = true;
 		if (GUI.Button(rectFromMiddle(350, heightOffset + 320, 35), "Level 3")) {
-			Application.LoadLevel("MainLevel");
+			Application.LoadLevel("MainLevel2");
 		}
 
 		GUI.skin = h2skin;

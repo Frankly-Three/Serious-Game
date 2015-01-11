@@ -16,6 +16,8 @@ public class Planet_Turning : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.RotateAround(target.transform.localPosition, rotation, rotateFactor * Time.deltaTime);
+		Vector3 targetUpdateOrigin = (target == null) ? Vector3.zero : target.transform.position;
+		Vector3 targetUpdateRotation = (target == null) ? Vector3.up : rotation;
+		transform.RotateAround(targetUpdateOrigin, targetUpdateRotation, rotateFactor * Time.deltaTime);
 	}
 }

@@ -13,6 +13,7 @@ public class Spawn : MonoBehaviour {
 	private int lastRespawnIndex;
 	private float interval = 1.0f;
     private float timeLeft = -0.1f;
+	private bool isSuiciding;
 
 	private class XPositionComparer : IComparer<GameObject> {
 		public int Compare(GameObject go1, GameObject go2)
@@ -36,6 +37,7 @@ public class Spawn : MonoBehaviour {
 		index = -1;
 		offset = 0;
 		lastRespawnIndex = 0;
+		isSuiciding = false;
 	}
 	
 	void Update () {
@@ -62,7 +64,10 @@ public class Spawn : MonoBehaviour {
 					offset = -index;
 				}
 				if (transform.position.y < -10.0f) {
-					audio.PlayOneShot(suicideSound);
+					if (!isSuiciding) {
+						audio.PlayOneShot(suicideSound);
+					}
+					isSuiciding = true;
 					offset = 0;
 				}
 				Respawn(index + offset);
@@ -89,6 +94,7 @@ public class Spawn : MonoBehaviour {
 		audio.PlayOneShot(respawnSound);
 		transform.position = spawns[i].transform.position;
 		lastRespawnIndex = i;
+		isSuiciding = false;
 	}
 
 	private void ResetPetrinets() {
