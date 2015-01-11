@@ -21,9 +21,11 @@ public class GUIScript : MonoBehaviour {
 		GUI.skin = h2skin;
 		GUI.Button(rectFromMiddle(400, heightOffset + 200, 50), "Play");
 		GUI.skin = h3skin_inactive;
+		GUI.enabled = false;
 		GUI.Button(rectFromMiddle(350, heightOffset + 250, 35), "Level 1");
 		GUI.Button(rectFromMiddle(350, heightOffset + 285, 35), "Level 2");
 		GUI.skin = h3skin_active;
+		GUI.enabled = true;
 		if (GUI.Button(rectFromMiddle(350, heightOffset + 320, 35), "Level 3")) {
 			Application.LoadLevel("MainLevel");
 		}
