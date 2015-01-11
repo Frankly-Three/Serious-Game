@@ -29,8 +29,13 @@ public class GUIScript : MonoBehaviour {
 		}
 
 		GUI.skin = h2skin;
-		GUI.Button(rectFromMiddle(400, heightOffset + 355, 50), "Wiki");
-		GUI.Button(rectFromMiddle(400, heightOffset + 405, 50), "Exit");
+		if (GUI.Button(rectFromMiddle(400, heightOffset + 355, 50), "Wiki")) {
+			Application.OpenURL("http://en.wikipedia.org/wiki/Petri_net");
+		}
+		if (GUI.Button(rectFromMiddle(400, heightOffset + 405, 50), "Exit")) {
+			UnityEditor.EditorApplication.isPlaying = false;
+			Application.Quit();
+		}
 	}
 
 	private Rect rectFromMiddle(int width, int heightOffset, int height) {
