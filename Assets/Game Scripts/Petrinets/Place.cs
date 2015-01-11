@@ -4,8 +4,13 @@ using System.Collections;
 public class Place : MonoBehaviour {
 
 	public int tokens;
+	private int initialTokens;
 	private TextMesh label;
 	private Platform listener;
+
+	void Awake() {
+		this.initialTokens = tokens;
+	}
 
 	void Start () {
 		label = GetComponentInChildren<TextMesh>();
@@ -30,5 +35,10 @@ public class Place : MonoBehaviour {
 
 	public void RegisterPlatform(Platform obj){
 		listener = obj;
+	}
+
+	public void Reset() {
+		tokens = initialTokens;
+		UpdateLabel(false);
 	}
 }

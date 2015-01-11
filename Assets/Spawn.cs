@@ -12,8 +12,17 @@ public class Spawn : MonoBehaviour {
 	private int lastRespawnIndex;
 	private float interval = 1.0f;
     private float timeLeft = -0.1f;
+
+	private class XPositionComparer : IComparer<GameObject> {
+		public int Compare(GameObject go1, GameObject go2)
+		{
+			return go1.transform.position.x.CompareTo(go2.transform.position.x);
+		}
+	}
 	
 	void Awake () {
+		spawns.Sort(new XPositionComparer());
+
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
 		spot = player.transform.FindChild("Spotlight").gameObject;
 		
@@ -32,7 +41,7 @@ public class Spawn : MonoBehaviour {
 		if(index == size - 1){
 			Debug.Log("WON!!!");
 		}else{
-			GameObject spawn = (GameObject)(spawns[index + 1]);
+			GameObject spawn = spawns[index + 1];
 			if(transform.position.x > spawn.transform.position.x){
 				//reached checkpoint
 				spawn.GetComponent<ParticleSystem>().startColor =  new Color(1.0f, 0.5f, 0.05f);
@@ -40,19 +49,24 @@ public class Spawn : MonoBehaviour {
 				index++;
 				offset = 0;
 			}
-			GameObject resetSpawn = (GameObject)(spawns[lastRespawnIndex + 1]);
+			GameObject resetSpawn = spawns[lastRespawnIndex + 1];
 			if(transform.position.x > resetSpawn.transform.position.x){
 				//reached checkpoint again
 				offset = 0;
 			}
-			if(transform.position.y < -10.0f || Input.GetKey(KeyCode.R)) {
+			if(transform.position.y < -10.0f || Input.GetKeyDown(KeyCode.R)) {
 				//reset
-				//TODO: reset petrinets
+				ResetPetrinets();
 				if (index + offset < 0) {
 					offset = -index;
 				}
-				Respawn(index + offset);	
-				offset--;
+				if (transform.position.y < -10.0f) {
+					offset = 0;
+				}
+				Respawn(index + offset);
+				if (Input.GetKeyDown(KeyCode.R)) {
+					offset--;
+				}
 			}
 		}
 		if(timeLeft < 0.0f){
@@ -72,5 +86,16 @@ public class Spawn : MonoBehaviour {
 	private void Respawn(int i){
 		transform.position = spawns[i].transform.position;
 		lastRespawnIndex = i;
+	}
+
+	private void ResetPetrinets() {
+		GameObject[] places = GameObject.FindGameObjectsWithTag("Place");
+		foreach (GameObject place in places) {
+			if (place.transform.position.x >= spawns[Mathf.Max(lastRespawnIndex - 1, 0)].transform.position.x 
+			    && place.transform.position.x <= spawns[Mathf.Min(lastRespawnIndex + 1, size - 1)].transform.position.x) {
+				Place placeScript = place.GetComponent<Place>();
+				placeScript.Reset();
+			}
+		}
 	}
 }
