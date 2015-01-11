@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class CutOff : MonoBehaviour {
+	public AudioClip cutoffSound;
 
 	private GameObject player;
 	private GameObject spot;
@@ -17,6 +18,7 @@ public class CutOff : MonoBehaviour {
 
 	void Update(){
 		if(player.transform.position.x < transform.position.x){
+			audio.PlayOneShot(cutoffSound);
 			player.transform.position = new Vector3(
 				transform.position.x,
 				player.transform.position.y,
