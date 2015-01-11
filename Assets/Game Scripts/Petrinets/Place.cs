@@ -6,8 +6,12 @@ public class Place : MonoBehaviour {
 	public int tokens;
 	private TextMesh label;
 	private Platform listener;
+	private Texture2D occupied;
+	private Texture2D empty;
 
 	void Start () {
+		occupied = Resources.Load<Texture2D>("place_occupied");
+	    empty = Resources.Load <Texture2D>("place_empty");
 		label = GetComponentInChildren<TextMesh>();
 		//label.transform.position = transform.position;
 		label.transform.position = new Vector3 (
@@ -25,6 +29,11 @@ public class Place : MonoBehaviour {
 		label.GetComponent<TextMesh>().text = tokens.ToString();
 		if(listener!=null){
 			listener.Move(playSound);
+		}
+		if (tokens > 0) {
+			renderer.material.mainTexture = occupied;
+		} else {
+			renderer.material.mainTexture = empty;
 		}
 	}
 

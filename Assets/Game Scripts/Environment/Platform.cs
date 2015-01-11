@@ -11,6 +11,9 @@ public class Platform : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		origin = transform.position;
+		if (place.tokens > 0) { // only apply when place already contains tokens
+			transform.position = origin + place.tokens * direction * magnitude;
+		}
 		place.RegisterPlatform(this);
 	}
 
