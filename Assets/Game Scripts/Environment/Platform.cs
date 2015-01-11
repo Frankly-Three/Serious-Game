@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Platform : MonoBehaviour {
-
+	public AudioClip moveSound;
 	public Place place;
 	public Vector3 direction;
 	private Vector3 origin;
@@ -15,7 +15,10 @@ public class Platform : MonoBehaviour {
 		transform.position = origin + place.tokens * direction * magnitude;
 	}
 
-	public void Move(){
+	public void Move(bool playSound){
 		transform.position = origin + place.tokens * direction * magnitude;
+		if (playSound) {
+			audio.PlayOneShot(moveSound);
+		}
 	}
 }
