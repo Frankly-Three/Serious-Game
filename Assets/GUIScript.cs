@@ -35,7 +35,9 @@ public class GUIScript : MonoBehaviour {
 			Application.OpenURL("http://en.wikipedia.org/wiki/Petri_net");
 		}
 		if (GUI.Button(rectFromMiddle(400, heightOffset + 405, 50), "Exit")) {
+#if UNITY_EDITOR
 			UnityEditor.EditorApplication.isPlaying = false;
+#endif
 			Application.Quit();
 		}
 	}

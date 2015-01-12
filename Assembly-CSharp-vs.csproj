@@ -70,7 +70,7 @@
      <None Include="Assets\Game prefabs\Petrinets\3DTextShader.shader" />
      <None Include="Assets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>D:/Git/Serious-Game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Frank/Dropbox/UnityProjects/Serious-Game/Serious-Game/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
