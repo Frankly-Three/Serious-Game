@@ -61,6 +61,6 @@ public class Place : MonoBehaviour {
 
 	public void Reset() {
 		tokens = initialTokens;
-		UpdateLabel(false);
+		UpdateOrbitals(false);
 	}
 }
