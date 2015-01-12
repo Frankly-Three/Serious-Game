@@ -66,7 +66,7 @@ public class Transition : MonoBehaviour {
 		//In
 		foreach (Place place in inPlace) {
 			place.tokens--;
-			place.UpdateLabel(true);
+			place.UpdateOrbitals(true);
 
 			pointers[place].particleSystem.startColor = Color.blue;
 			pointers[place].particleSystem.emissionRate = 10;
@@ -74,7 +74,7 @@ public class Transition : MonoBehaviour {
 		//Out
 		foreach (Place place in outPlace) {
 			place.tokens++;
-			place.UpdateLabel(true);
+			place.UpdateOrbitals(true);
 
 			pointers[place].particleSystem.startColor = Color.blue;
 			pointers[place].particleSystem.emissionRate = 10;

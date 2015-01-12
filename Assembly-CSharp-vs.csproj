@@ -52,6 +52,7 @@
      <Compile Include="Assets\Game Scripts\Environment\Planet_Turning.cs" />
      <Compile Include="Assets\Game Scripts\Environment\Platform.cs" />
      <Compile Include="Assets\Game Scripts\Environment\SpawnPoint.cs" />
+     <Compile Include="Assets\Game Scripts\Petrinets\Orbital.cs" />
      <Compile Include="Assets\Game Scripts\Petrinets\Place.cs" />
      <Compile Include="Assets\Game Scripts\Petrinets\Transition.cs" />
      <Compile Include="Assets\Game Scripts\Sound\SoundScript.cs" />
