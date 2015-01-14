@@ -15,7 +15,6 @@ public class OrientModel : MonoBehaviour {
 
 	void Start () {
 		dirRight = true;
-		Debug.Log (dirRight);
 	}
 
 	void Update () {
@@ -24,7 +23,6 @@ public class OrientModel : MonoBehaviour {
 			Quaternion.Euler(0, dirRight?90:270, 0),
 			Time.deltaTime * 10f
 		);
-		//TODO: Fix only when idling
 		model.transform.position = new Vector3(
 			player.transform.position.x,
 			player.transform.position.y - 1.025f,
