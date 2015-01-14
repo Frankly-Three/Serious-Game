@@ -35,10 +35,14 @@ public class EscScript : MonoBehaviour {
 			GUI.Box(new Rect(widthOffset, heightOffset, width, height), "");
 
 		    int middleHeight = Screen.height / 2;
-			if (GUI.Button(rectFromMiddle(400, middleHeight - 50, 50), "Continue Level")) {
+			if (GUI.Button(rectFromMiddle(400, middleHeight - 75, 50), "Continue Level")) {
 				stopPause();
 			}
-			if (GUI.Button(rectFromMiddle(400, middleHeight + 0, 50), "Exit Level")) {
+			if (GUI.Button(rectFromMiddle(400, middleHeight - 25, 50), "Restart Level")) {
+				Application.LoadLevel(Application.loadedLevel);
+				stopPause();
+			}
+			if (GUI.Button(rectFromMiddle(400, middleHeight + 25, 50), "Exit Level")) {
 				Application.LoadLevel("Menu");
 				stopPause();
 			}
