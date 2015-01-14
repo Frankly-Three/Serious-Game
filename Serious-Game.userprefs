@@ -1,23 +1,26 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\SmoothCamera.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DontGoThroughThings.cs">
     <Files>
-      <File FileName="Assets\Game Scripts\Petrinets\Transition.cs" Line="21" Column="15" />
+      <File FileName="Assets\Spawn.cs" Line="101" Column="22" />
+      <File FileName="Assets\Standard Assets\EscScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Game Scripts\Petrinets\Transition.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\OrientModel.cs" Line="1" Column="1" />
       <File FileName="Assets\Game Scripts\Environment\Platform.cs" Line="1" Column="1" />
       <File FileName="Assets\GUIScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" Line="1" Column="1" />
       <File FileName="Assets\Game prefabs\Petrinets\3DTextShader.shader" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" Line="76" Column="99" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" Line="1" Column="1" />
       <File FileName="Assets\Game Scripts\Petrinets\Place.cs" Line="1" Column="1" />
       <File FileName="Assets\Game Scripts\Environment\Planet_Turning.cs" Line="1" Column="1" />
       <File FileName="Assets\FollowMouseInWorldScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Spawn.cs" Line="1" Column="1" />
-      <File FileName="Assets\Game Scripts\Sound\SoundScript.cs" Line="30" Column="45" />
+      <File FileName="Assets\Game Scripts\Sound\SoundScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Game Scripts\Environment\CutOff.cs" Line="1" Column="1" />
-      <File FileName="c:\Users\Frank\Dropbox\UnityProjects\Serious-Game\Serious-Game\Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" Line="19" Column="2" />
+      <File FileName="c:\Users\Frank\Dropbox\UnityProjects\Serious-Game\Serious-Game\Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" Line="1" Column="1" />
       <File FileName="Assets\Game Scripts\Environment\FallOff.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\SmoothCamera.cs" Line="32" Column="20" />
+      <File FileName="Assets\Standard Assets\SmoothCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\DontGoThroughThings.cs" Line="48" Column="6" />
+      <File FileName="Assets\UIManagerScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

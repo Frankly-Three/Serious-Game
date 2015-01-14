@@ -89,6 +89,18 @@ public class Spawn : MonoBehaviour {
 		isSuiciding = false;
 	}
 
+	public void DoRespawn() {
+		if (!isSuiciding) {
+			audio.PlayOneShot(suicideSound);
+		}
+		isSuiciding = true;
+		Respawn(index);
+	}
+
+	public bool getIsSuiciding() {
+		return isSuiciding;
+	}
+
 	private void ResetPetrinets() {
 		GameObject[] places = GameObject.FindGameObjectsWithTag("Place");
 		foreach (GameObject place in places) {
