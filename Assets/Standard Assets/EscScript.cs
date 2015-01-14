@@ -4,7 +4,7 @@ using System.Collections;
 public class EscScript : MonoBehaviour {
 	public GUISkin skin;
 
-	private bool isPaused;
+	private bool _isPaused;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +14,7 @@ public class EscScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) {
-			if (isPaused) {
+			if (_isPaused) {
 				stopPause();
 			}
 			else {
@@ -24,7 +24,7 @@ public class EscScript : MonoBehaviour {
 	}
 
 	void OnGUI() {
-		if (isPaused) {
+		if (_isPaused) {
 			GUI.skin = skin;
 
 			int widthOffset = 100;
@@ -50,12 +50,12 @@ public class EscScript : MonoBehaviour {
 	}
 
 	private void pause() {
-		isPaused = true;
+		_isPaused = true;
 		Time.timeScale = 0.0f;
 	}
 
 	private void stopPause() {
-		isPaused = false;
+		_isPaused = false;
 		Time.timeScale = 1.0f;
 	}
 
@@ -63,5 +63,9 @@ public class EscScript : MonoBehaviour {
 		int offsetFromMiddle = width / 2;
 		int middleX = Screen.width / 2;
 		return new Rect(middleX - offsetFromMiddle, heightOffset, offsetFromMiddle * 2, height);
+	}
+
+	public bool isPaused() {
+		return _isPaused;
 	}
 }

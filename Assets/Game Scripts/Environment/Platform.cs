@@ -20,11 +20,6 @@ public class Platform : MonoBehaviour {
 	public void Move(bool playSound){
 		transform.position = origin + place.tokens * direction * magnitude;
 		if (playSound) {
-			if (audio == null || moveSound == null) {
-				Debug.Log("audio = " + audio);
-				Debug.Log("moveSound = " + moveSound);
-				Debug.Log(transform.position);
-			}
 			audio.PlayOneShot(moveSound);
 		}
 	}

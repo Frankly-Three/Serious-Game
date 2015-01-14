@@ -42,6 +42,9 @@ public class Transition : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
+		if (Camera.main.GetComponent<SmoothCamera>().isZoomed()) {
+			return;
+		}
 		Execute();
 	}
 

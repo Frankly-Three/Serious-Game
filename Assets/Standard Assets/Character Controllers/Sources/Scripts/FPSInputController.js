@@ -16,7 +16,13 @@ function Awake () {
 // Update is called once per frame
 function Update () {
 	// Get the input vector from keyboard or analog stick
-	var directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+	var directionVector;
+	
+	if (Camera.main.GetComponent("SmoothCamera").isZoomed()) {
+		directionVector = Vector3.zero;
+	} else {
+		directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+	}
 	
 	if (directionVector != Vector3.zero) {
 		// Get the length of the directon vector and then normalize it
@@ -48,7 +54,7 @@ function Update () {
 		script.SetDirection(speed.x > 0);
 	}
 	
-    if( Input.GetButtonDown("Jump") && motor.grounded ) {
+    if( Input.GetButtonDown("Jump") && motor.grounded && !Camera.main.GetComponent("SmoothCamera").isZoomed()) {
         anim.Play(0, -1, 0.11f);
 	}
 	
@@ -67,7 +73,7 @@ function Update () {
 	
 	// Apply the direction to the CharacterMotor
 	motor.inputMoveDirection = transform.rotation * directionVector;
-	motor.inputJump = Input.GetButton("Jump");
+	motor.inputJump = Input.GetButton("Jump") && !Camera.main.GetComponent("SmoothCamera").isZoomed();
 }
 
 // Require a character controller to be attached to the same game object

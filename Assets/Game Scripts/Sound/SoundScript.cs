@@ -30,7 +30,7 @@ public class SoundScript : MonoBehaviour {
 			player.audio.PlayOneShot(touchDownSound);
 			isPlayerJumping = false;
 		}
-		if (Input.GetKey(KeyCode.Space) && IsPlayerGrounded()) {
+		if (Input.GetKey(KeyCode.Space) && IsPlayerGrounded() && !Camera.main.GetComponent<SmoothCamera>().isZoomed()) {
 			player.audio.PlayOneShot(jumpSound);
 			isPlayerJumping = true;
 		}
