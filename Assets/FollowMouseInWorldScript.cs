@@ -10,9 +10,10 @@ public class FollowMouseInWorldScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 mousePosition = Input.mousePosition;
-		mousePosition.z = 10f;
-		transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
-		Debug.Log(transform.position);
+		if (Application.loadedLevelName.Equals("Menu")) {
+			Vector3 mousePosition = Input.mousePosition;
+			mousePosition.z = 10f;
+			transform.position = Camera.main.ScreenToWorldPoint(mousePosition);
+		}
 	}
 }
