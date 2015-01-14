@@ -14,17 +14,8 @@ public class Spawn : MonoBehaviour {
 	private float interval = 1.0f;
     private float timeLeft = -0.1f;
 	private bool isSuiciding;
-
-	private class XPositionComparer : IComparer<GameObject> {
-		public int Compare(GameObject go1, GameObject go2)
-		{
-			return go1.transform.position.x.CompareTo(go2.transform.position.x);
-		}
-	}
 	
 	void Awake () {
-		spawns.Sort(new XPositionComparer());
-
 		GameObject player = GameObject.FindGameObjectWithTag ("Player");
 		spot = player.transform.FindChild("Spotlight").gameObject;
 		
@@ -45,7 +36,8 @@ public class Spawn : MonoBehaviour {
 			Debug.Log("WON!!!");
 		}else{
 			GameObject spawn = spawns[index + 1];
-			if(transform.position.x > spawn.transform.position.x){
+			if (Vector3.Distance(transform.position, spawn.transform.position) <= 2.0f) {
+			//if(transform.position.x > spawn.transform.position.x){
 				//reached checkpoint
 				spawn.GetComponent<ParticleSystem>().startColor =  new Color(1.0f, 0.5f, 0.05f);
 				timeLeft = interval;
