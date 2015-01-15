@@ -6,6 +6,13 @@ public class EscScript : MonoBehaviour {
 
 	private bool _isPaused;
 
+	private string timerLabelText = "00:00";
+	private float startTime;
+
+	void Awake() {
+		startTime = Time.time;
+	}
+
 	// Use this for initialization
 	void Start () {
 	
@@ -21,11 +28,25 @@ public class EscScript : MonoBehaviour {
 				pause();
 			}
 		}
+		int elapsedTime = (int)(Time.time - startTime);
+
+		int minutes = (elapsedTime / 60);
+		int seconds = elapsedTime - (minutes * 60);
+
+		timerLabelText = addLeadingZero(minutes.ToString()) + ":" + addLeadingZero(seconds.ToString());
+	}
+
+	private string addLeadingZero(string value) {
+		if (value.Length == 1) {
+			return "0" + value;
+		}
+		return value;
 	}
 
 	void OnGUI() {
+		GUISkin oldSkin = GUI.skin;
+		GUI.skin = skin;
 		if (_isPaused) {
-			GUI.skin = skin;
 
 			int widthOffset = 100;
 			int heightOffset = 100;
@@ -47,6 +68,9 @@ public class EscScript : MonoBehaviour {
 				stopPause();
 			}
 		}
+
+		GUI.Label(rectFromMiddle(200, 100, 50), timerLabelText);
+		GUI.skin = oldSkin;
 	}
 
 	private void pause() {
