@@ -33,7 +33,7 @@ public class Spawn : MonoBehaviour {
 	
 	void Update () {
 		if(index == size - 1){
-			Debug.Log("WON!!!");
+			GameObject.FindGameObjectWithTag ("Player").GetComponent<EscScript>().SetWon();
 		}else{
 			GameObject spawn = spawns[index + 1];
 			if (Vector3.Distance(transform.position, spawn.transform.position) <= 2.0f) {

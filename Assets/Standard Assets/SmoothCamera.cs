@@ -11,7 +11,8 @@ public class SmoothCamera : MonoBehaviour {
 	private Vector3 zoomChanged = new Vector3(0f, 0f, 25f);
 
 	void Update () {
-		if (!_isZoomed && Input.GetMouseButtonDown(1) && !GameObject.FindGameObjectWithTag("Player").GetComponent<EscScript>().isPaused()) {
+		if (!_isZoomed && Input.GetMouseButtonDown(1) && !GameObject.FindGameObjectWithTag("Player").GetComponent<EscScript>().isPaused()
+		    && !GameObject.FindGameObjectWithTag("Player").GetComponent<EscScript>().GetWon()) {
 			_isZoomed = true;
 			transform.position -= zoomChanged;
 		}

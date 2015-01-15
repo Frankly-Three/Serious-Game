@@ -9,6 +9,8 @@ public class EscScript : MonoBehaviour {
 	private string timerLabelText = "00:00";
 	private float startTime;
 
+	private bool won;
+
 	void Awake() {
 		startTime = Time.time;
 	}
@@ -68,6 +70,25 @@ public class EscScript : MonoBehaviour {
 				stopPause();
 			}
 		}
+		else if (won) {
+			int widthOffset = 100;
+			int heightOffset = 100;
+			
+			int width = Screen.width - (2 * widthOffset);
+			int height = Screen.height - (2 * heightOffset);
+			GUI.Box(new Rect(widthOffset, heightOffset, width, height), "");
+			
+			int middleHeight = Screen.height / 2;
+			GUI.Label(rectFromMiddle(400, middleHeight - 125, 50), "You won!");
+			if (GUI.Button(rectFromMiddle(400, middleHeight - 25, 50), "Restart Level")) {
+				Application.LoadLevel(Application.loadedLevel);
+				stopPause();
+			}
+			if (GUI.Button(rectFromMiddle(400, middleHeight + 25, 50), "Exit Level")) {
+				Application.LoadLevel("Menu");
+				stopPause();
+			}
+		}
 
 		GUI.Label(rectFromMiddle(200, 100, 50), timerLabelText);
 		GUI.skin = oldSkin;
@@ -91,5 +112,18 @@ public class EscScript : MonoBehaviour {
 
 	public bool isPaused() {
 		return _isPaused;
+	}
+
+	public void SetWon() {
+		won = true;
+		Invoke("timezero", 0.1f);
+	}
+
+	public bool GetWon() {
+		return won;
+	}
+
+	private void timezero() {
+		Time.timeScale = 0.0f;
 	}
 }
